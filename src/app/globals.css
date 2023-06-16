@@ -1,0 +1,323 @@
+
+
+:root {
+    --color-boton: #45727F; /* Color para los botones */
+    --color-borde: #732E06; /* Color para los bordes */
+    --color-etiqueta: #D9631E; /* Color para las etiquetas */
+    --color-destacado: #F29057; /* Color para elementos destacados */
+    --color-fondo: #F2BEA0; /* Color para el fondo */
+  }
+  body {
+    z-index: -1;
+    position: relative;
+    padding: 5px;
+    min-height: 100vh;
+    width: 100%;
+    background: #e7e9f5;
+    color: black;
+  }
+  
+  /*Smarth phone*/
+  
+  @media (max-width: 600px) {
+  
+    #tipo_usuario{
+      width: 250px;
+      background-color: #f1ecec;
+      color: black;
+      border-radius: 5px;
+      box-shadow:  1px 1px 0px #7b7b7b,
+      -1px -1px 0px #ffffff;
+    }
+    #direccion{
+      background-color: #f1ecec;
+      color: black;
+      width: 250px;
+      border-radius: 5px;
+      box-shadow:  1px 1px 0px #7b7b7b,
+      -1px -1px 0px #ffffff;
+      height: 30px;
+     
+    }
+  
+    .Formulario input{
+      color: rgb(0, 0, 0);
+      background-color: #f1ecec;
+      width: 280px;
+      font-size: 14px;
+      box-shadow:  1px 1px 0px #7b7b7b,
+      -1px -1px 0px #ffffff;
+  }
+  
+  #Send{
+    height: 35px;
+    margin: 10px;
+    width: 100px;
+    border-radius: 20px;
+    color: #ffffff;
+    border: none;
+    background-color: var(--color-boton);
+    font-size: 12px;
+    padding: 5px;
+   
+  }
+  
+  
+  .Formulario{
+      background-color: #ffffff;
+      color:rgb(0, 0, 0);
+      margin-left: 5%;
+      max-width: 400px;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+  textarea{
+      border: none;
+    }
+  
+    .contenedor {
+      color:black;
+      margin: 50px auto;
+      max-width: 500px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    div .Formulario{
+      width: 350px;
+      border: 1px solid #e7e9f5;
+      padding-left: 50px;
+    }
+  
+    
+    h1 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    label {
+      padding-top: 5px;
+      display: block;
+      
+    }
+    
+    select {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .formulario {
+      display: none;
+    }
+    
+    .formulario.active {
+      display: block;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /*PC*/
+  @media (min-width: 600px) {
+    .Formulario{
+      color: black;
+  
+    }
+    .Formulario input{
+     
+      color: rgb(0, 0, 0);
+      background-color:#f1ecec;
+      width: 300px;
+      font-size: 14px;
+      box-shadow:  2px 2px 0px #7b7b7b,
+      -2px -2px 0px #ffffff;
+  }
+     #tipo_usuario{
+      width: 300px;
+      background-color: #f1ecec;
+      color: black;
+      border-radius: 5px;
+      box-shadow:  1px 1px 0px #7b7b7b,
+      -1px -1px 0px #ffffff;
+    }
+  
+    #Send{
+      height: 35px;
+      margin: 10px;
+      width: 100px;
+      border-radius: 20px;
+      color: #ffffff;
+      border: none;
+      background-color: var(--color-boton);
+      font-size: 12px;
+      padding: 5px;
+    }
+    #Send:hover{
+      box-shadow:  1px 1px 0px #7b7b7b,
+      -1px -1px 0px #ffffff;
+      cursor: pointer;
+    }
+  
+    #nombre{
+        background-color: #f1ecec;
+        color: rgb(0, 0, 0);
+        height: 38px;
+    }
+  
+    #telefono{
+      background-color: #f1ecec;
+      color: rgb(0, 0, 0);
+      height: 38px;
+  }
+  
+    #nombre_empresa{
+        background-color:#f1ecec;
+        color: rgb(0, 0, 0);
+        height: 38px;
+    }
+  
+    #nombre_empresa{
+      background-color: #f1ecec;
+      color: rgb(0, 0, 0);
+      height: 38px;
+  }
+  
+  #numero_reps{
+    background-color: #f1ecec;
+    color: rgb(0, 0, 0);
+    height: 38px;
+  }
+
+  #duracion_video{
+    background-color: #f1ecec;
+    color: rgb(0, 0, 0);
+    height: 38px;
+  }
+  
+  #direccion{
+    padding: 5px;
+    width: 250px;
+    background-color: #f1ecec;
+    color: rgb(0, 0, 0);
+    height: 60px;
+    border-radius: 5px;
+   
+  }
+  
+  #rutas{
+    padding: 5px;
+    width: 220px;
+    background-color: #f1ecec;
+    color: rgb(0, 0, 0);
+    height: 60px;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 60px;
+   
+  }
+
+ 
+
+  #calidad{
+    padding: 5px;
+    width: 220px;
+    background-color: #f1ecec;
+    color: rgb(0, 0, 0);
+    height: 60px;
+    border-radius: 5px;
+    margin-top: 10px;
+     height: 50px;
+  }
+
+  #contenedor_rutas{
+    margin-top: -26px;
+  }
+  
+  .contenedor {
+    color:black;
+    margin: 50px auto;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  div .Formulario{
+    color:rgb(0, 0, 0);
+    margin: 50px auto;
+    width: 500px;
+    max-width: 600px;
+    padding: 35px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    background-color: white;
+  }
+  
+  
+  h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    top: 10px;
+    padding-top: 12px;
+    display: block;
+  }
+  
+  select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .formulario {
+    display: none;
+  }
+  
+  .formulario.active {
+    display: block;
+  }
+  
+  textarea{
+    border: none;
+    height: 200px;
+    width: 300px;
+    font-size: 15px;
+    resize: none;
+    box-shadow:  2px 2px 0px #7b7b7b,
+    -2px -2px 0px #ffffff;
+  }
+  
+  }
