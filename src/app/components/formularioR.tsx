@@ -14,7 +14,7 @@ ESTAS LINEAS SON PARA LA INICIALIZACIÓN DE LA BASE EN MODO ADMIN
 NOS PERMITE PODER ENVIAR DATOS
 
 // Inicializa la aplicación Firebase Admin
-const serviceAccount = require('/adminsdk');
+const serviceAccount = require('/adminsdkev');
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -45,9 +45,8 @@ ESTAS LINEAS SON LAS QUE LLAMN LA FUNCION Y PERMITEN EL ENVIO DE LOS DATOS QUE S
 const coleccion = 'pruebaEnvio';
 const datosDocumento = {
   // Datos del documento que deseas enviar
-  exito: 'KEVIN',
+  edad: 17
   nombre: 'ARE',
-  numero: 2,
 };
 enviarDocumentoAColeccion(coleccion, datosDocumento)
 */
