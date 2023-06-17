@@ -26,7 +26,7 @@ export default function Form_datos() {
 
     //setPrueba(prueba)
     setDatos({
-      
+
       rutas: datos.rutas,
       nombre_empresa: datos.nombre_empresa,
       numero_reps: datos.numero_reps,
@@ -81,101 +81,178 @@ export default function Form_datos() {
     return total;
   };
 
+  const handleKeyPress = (e: any) => {
+    const inputValue = e.target.value;
+    const keyPressed = e.key;
+    const isNegative = inputValue.startsWith('-');
+
+    if (isNegative && keyPressed === '-') {
+      e.preventDefault(); // Evita escribir un segundo signo negativo
+    } else if (isNaN(Number(keyPressed)) && keyPressed !== 'Backspace') {
+      e.preventDefault(); // Evita escribir cualquier carácter que no sea un número o la tecla de retroceso
+    } else if (inputValue.length >= 2 && !isNegative) {
+      e.preventDefault(); // Evita escribir más caracteres si no es un número negativo
+    }
+  };
+
   return (
-    <form onSubmit={enviarDatos}>
-      <div className="Formulario">
-        <label htmlFor="tipo_usuario">Ingreso de anuncios</label>
 
-        <div>
-          <label htmlFor="nombre_empresa">Nombre de la empresa:</label>
-          <input
-            type="text"
-            id="nombre_empresa"
-            name="nombre_empresa"
-            placeholder="ingresa un nombre"
-            required
+    <form className="form-cot" onSubmit={enviarDatos}>
+      <h2>Cotización de servicios</h2>
+
+      <section className="datos-empresa-form">
+        <h3>Información de la empresa</h3>
+
+        <p>Ingrese el nombre de su empresa</p>
+        <input
+          type="text"
+          id="nombre_empresa"
+          className="text1-form"
+          name="nombre_empresa"
+          placeholder="Ingrese el nombre de su empresa"
+          autoComplete="off"
+          required
+          onChange={handleInputChange}
+          value={datos.nombre_empresa}
+        />
+
+        <p>Correo electrónico de la empresa</p>
+        <input
+          type="text"
+          placeholder="Ingrese el correo electrónico de la empresa"
+          autoComplete="off"
+          className="text1-form"
+          onChange={handleInputChange}
+          required
+        ></input>
+
+        <p>Ingrese el teléfono de su empresa</p>
+        <input
+          type="text"
+          placeholder="Ingrese el teléfono de su empresa"
+          autoComplete="off"
+          className="text1-form"
+          onChange={handleInputChange}
+          required
+        ></input>
+      </section>
+
+      <section className="datos-empresa-form">
+        <h3>Datos para la cotización</h3>
+
+        <div className="section-cotizacion">
+          <p>Seleccione el tipo de anuncio requerido</p>
+          <select value="" className="input-detalles" required>
+            <option value="Video">Video</option>
+            <option value="Imagen">Imagen</option>
+            <option value="Gif">Gif</option>
+            <option value="Marquesina">Marquesina</option>
+            <option value="Texto">Texto</option>
+          </select>
+        </div>
+
+        <div className="section-cotizacion">
+          <p>Seleccione la calidad del anucio deseada</p>
+          <select name="calidad"
+            id="calidad"
             onChange={handleInputChange}
-            value={datos.nombre_empresa}
-          />
+            value={datos.calidad}
+            className="input-detalles"
+            required>
+            <option value="1">FHD 1080p</option>
+            <option value="2">2K</option>
+            <option value="3">UHD 4K</option>
+          </select>
+        </div>
 
-          <label htmlFor="numero_reps">numero de repeticiónes(segundos)</label>
-          <input
-            type="number"
-            id="numero_reps"
-            name="numero_reps"
-            min="1"
-            max="99"
-            pattern="\d{1,2}"
-            placeholder="selecciona una cantidad"
-            required
-            onChange={handleInputChange}
-            value={datos.numero_reps}
-          />
-
-          <label htmlFor="duracion_video">duracion del video</label>
+        <div className="section-cotizacion">
+          <p>Seleccione la duracion del anucio deseada</p>
           <input
             type="number"
             id="duracion_video"
+            className='input-tiempo'
             name="duracion_video"
             min="1"
             max="99"
             pattern="\d{1,2}"
             placeholder="selecciona una cantidad"
             required
+            onKeyPress={handleKeyPress}
             onChange={handleInputChange}
             value={datos.duracion_video}
           />
+        </div>
 
-          <br />
-          <br />
-          <label htmlFor="opciones_calidad">Seleccione la calidad: </label>
-          <select name="calidad" 
-          id="calidad" 
-          onChange={handleInputChange}
-          value={datos.calidad}
-          >
-            <option value="1">Video calidad: 720p </option>
-            <option value="2">Video calidad: 4K </option>
-          </select>
+        <div className="section-cotizacion">
+          <p>Seleccione el número de repeticiones deseada</p>
+          <input
+            type="number"
+            id="numero_reps"
+            className='input-tiempo'
+            name="numero_reps"
+            min="1"
+            max="99"
+            pattern="\d{1,2}"
+            placeholder="selecciona una cantidad"
+            required
+            onKeyPress={handleKeyPress}
+            onChange={handleInputChange}
+            value={datos.numero_reps}
+          />
+        </div>
 
-          <div className="rutas_cont">
-            <label htmlFor="opciones_rutas">Seleccione la ruta: </label>
-
-            <select name="rutas" 
-            id="rutas" 
+        <div className="section-cotizacion">
+          <p>Seleccione la ruta deseada</p>
+          <select name="rutas"
+            id="rutas"
             onChange={handleInputChange}
             value={datos.rutas}
-            >
-              {/*<option >Ciudad Neily-Golfito </option>
-            <option value="2">Paso Canoas-Golfito </option>
-            <option value="3">Neily-Paso-Canoas </option>
-            <option value="4">Palmar Norte-Río claro </option>*/}
+            className="input-detal-rut"
+            required
+          >
+            {rutas.map((ruta: any) => (
+              <option key={ruta.id} value={ruta.id}>
+                {ruta.nombre}
+              </option>
+            ))}
+          </select>
+          <div />
+        </div>
 
-              {rutas.map((ruta: any) => (
-                <option key={ruta.id} value={ruta.id}>
-                  {ruta.nombre}
-                </option>
-              ))}
-            </select>
-
-            <div />
-          </div>
-
-          <label htmlFor="precio_calculado">Precio:</label>
+        <div className="section-cotizacion">
+          <p>Precio de la cotización</p>
           <textarea
             id="direccion"
             name="direccion"
-            placeholder="precio total es: "
+            className="text-precio"
+            placeholder="Precio total es: "
             disabled
             onChange={handleInputChange}
             value={datos.direccion}
           ></textarea>
           <br />
-          <button id="Send" type="submit">
+        </div>
+
+        <div className="section-cotizacionB">
+        <button id="Send" type="submit" className="buttonEnviar">
+          Registrar Cotización
+          </button>
+        </div>
+
+        <div className="section-cotizacion">
+          <p>Cotizaciones realizadas</p>
+          <input type="text" className="text-cotizciones" disabled>
+
+          </input>
+        </div>
+
+        <div className="section-cotizacionB">
+          <button id="Send" type="submit" className="buttonEnviar">
             Enviar datos
           </button>
         </div>
-      </div>
-    </form>
+      </section>
+    </form >
+
   );
 }

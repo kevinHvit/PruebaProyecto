@@ -8,16 +8,14 @@
     --color-fondo: #F2BEA0; /* Color para el fondo */
   }
   body {
-    z-index: -1;
-    position: relative;
-    padding: 5px;
-    min-height: 100vh;
-    width: 100%;
-    background: #e7e9f5;
-    color: black;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
-  /*Smarth phone*/
+  /*Smarth phone
   
   @media (max-width: 600px) {
   
@@ -125,6 +123,7 @@
   }
   
   
+  /*
   
   
   
@@ -140,8 +139,7 @@
   
   
   
-  
-  /*PC*/
+  /*PC
   @media (min-width: 600px) {
     .Formulario{
       color: black;
@@ -200,11 +198,6 @@
         height: 38px;
     }
   
-    #nombre_empresa{
-      background-color: #f1ecec;
-      color: rgb(0, 0, 0);
-      height: 38px;
-  }
   
   #numero_reps{
     background-color: #f1ecec;
@@ -321,20 +314,10 @@
   }
   
   }
+*/
 
 
-
-/*fromularioR*/
-  .container-form{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-  }
-  
+/*fromularioR*/  
   .div-buttons-form{
     display: flex;
     flex-direction: row;
@@ -371,11 +354,12 @@
   }
   
   .form-cot{
+    color: white;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 50px;
     justify-content: center;
     align-items: center;
     background-color: rgba(116, 116, 116, 0.3);
@@ -411,36 +395,88 @@
     font-size: 20px;
   }
   
+  .section-cotizacion{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
   .section-cotizacion p{
     font-size: 20px;
   }
   
-  .datos-empresa-form #text1-form{
+  .text1-form{
     background-color: rgba(129, 129, 131, 0.3);
+    object-fit: contain;
     width: 100%;
-    height: 50px;
+    height: 20px;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
     font-size: 20px;
   }
   
   .input-tiempo{
-    height: 50px;
-    width: 100%;
+    height: 30px;
+    width: 56%;
     padding: 10px;
-    margin-bottom: 10px;
     font-size: 20px;
   }
   
   .input-detalles{
     height: 50px;
-    width: 100%;
+    width: 60%;
     padding: 10px;
-    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .input-detal-rut{
+    height: 50px;
+    width:60%;
+    padding: 10px;
     font-size: 20px;
   }
   
   .opcionesAdicionales{
     display: none;
+  }
+
+  .text-precio{
+    width: 100%;
+    height: 30px;
+    resize: none;
+    font-size: 20px;
+  }
+
+  .text-cotizciones{
+    width: 100%;
+    height: 100px
+  }
+
+.section-cotizacionB{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 5px;
+  width: 100%;
+  height: 50px;
+}
+
+  .buttonEnviar{
+    font-size: 25px;
+    background-color: white;
+    border: solid 1px white;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .buttonEnviar:hover{
+    background-color: forestgreen;
+    transform: scale(1.1);
   }
