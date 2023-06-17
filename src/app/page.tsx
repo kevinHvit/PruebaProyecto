@@ -6,25 +6,26 @@ import Aplicacion from './components/Aplicacion';
 import Form_datos from './components/formulario';
 import MyForm from './components/form3';
 
+import FormuRolo from './components/formDat'
 
 
 export default function Home() {
 
+    return (
 
-  return (
-    
-  <div>
-   
+      <div>
 
-   {/*<Aplicacion/>*/}
-   <Formulario/>
-   
-    
-    
 
-  </div>
-  
- 
-  
-  )
+        {/*<Aplicacion/>*/}
+        <FormuRolo />
+
+
+
+
+      </div>
+
+
+
+    )
 }
+
