@@ -7,6 +7,7 @@ import Form_datos from './components/formulario';
 import MyForm from './components/form3';
 
 import FormuRolo from './components/formDat'
+import FormDat from './components/formularioR';
 
 
 export default function Home() {
@@ -17,7 +18,8 @@ export default function Home() {
 
 
         {/*<Aplicacion/>*/}
-        <FormuRolo />
+        <Formulario/>
+        
 
 
 

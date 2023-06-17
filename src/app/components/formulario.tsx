@@ -7,6 +7,8 @@ import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 export default function Form_datos() {
   const [rutas, setRutas] = useState([]);
+  //const [prueba, setPrueba] = useState(0);
+
 
   const [datos, setDatos] = useState({
     nombre_empresa: "",
@@ -22,7 +24,9 @@ export default function Form_datos() {
 
     const price_r = getPriceRute(Number(datos.rutas));
 
+    //setPrueba(prueba)
     setDatos({
+      
       rutas: datos.rutas,
       nombre_empresa: datos.nombre_empresa,
       numero_reps: datos.numero_reps,
